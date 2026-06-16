@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmileAnimals | Login do Administrador</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="serve.js" defer></script>
+</head>
+<!--Pagina de login exclusiva do administrador-->
+<body data-page="admin-login">
+  <div class="app-shell">
+    <main class="entry-layout admin-entry-layout">
+      <section class="admin-security-panel">
+        <p class="eyebrow">Acesso administrativo</p>
+        <h1 id="admin-access-title">Criar acesso administrativo</h1>
+        <p id="admin-access-description" class="hero-text">
+          Esta tela existe somente para o administrador. O primeiro acesso cria um nome e uma
+          senha exclusivos; depois disso, apenas essas credenciais poder&atilde;o entrar.
+        </p>
+
+        <div id="admin-access-status" class="credential-box security-box">
+          <strong>Situa&ccedil;&atilde;o atual:</strong>
+          <span>Nenhum administrador cadastrado.</span>
+        </div>
+
+        <div class="security-list">
+          <article class="security-item">
+            <strong>Uso exclusivo</strong>
+            <span>Somente o administrador cria e utiliza estas credenciais.</span>
+          </article>
+          <article class="security-item">
+            <strong>Fluxo separado</strong>
+            <span>O cliente n&atilde;o entra por esta p&aacute;gina, apenas pela tela pr&oacute;pria dele.</span>
+          </article>
+          <article class="security-item">
+            <strong>Controle de registros</strong>
+            <span>Depois do login, a planilha administrativa mostra pedidos anteriores e atuais.</span>
+          </article>
+        </div>
+
+        <div class="entry-links">
+          <a class="ghost-link light-link" href="index.html">Voltar para a escolha de acesso</a>
+          <a class="ghost-link light-link" href="login-cliente.html">Ir para o login do cliente</a>
+        </div>
+      </section>
+
+      <section class="panel login-panel admin-entry-panel">
+        <div class="panel-heading">
+          <p class="panel-tag">Identifica&ccedil;&atilde;o administrativa</p>
+          <h2 id="admin-panel-title">Criar acesso administrativo</h2>
+          <p id="admin-panel-description">
+            Se ainda n&atilde;o existir um administrador, crie o acesso aqui. Caso j&aacute; exista, use o nome e
+            a senha exclusivos para entrar.
+          </p>
+        </div>
+
+        <form id="admin-setup-form" class="form-grid">
+          <label class="field">
+            <span>Nome do administrador</span>
+            <input id="admin-setup-name" name="adminSetupName" type="text" placeholder="Ex.: Rafael Batista" autocomplete="username" required>
+          </label>
+
+          <label class="field">
+            <span>Senha administrativa</span>
+            <input id="admin-setup-password" name="adminSetupPassword" type="password" placeholder="Crie uma senha segura" autocomplete="new-password" required>
+          </label>
+
+          <label class="field">
+            <span>Confirmar senha</span>
+            <input id="admin-setup-password-confirm" name="adminSetupPasswordConfirm" type="password" placeholder="Repita a senha criada" autocomplete="new-password" required>
+          </label>
+
+          <button class="secondary-button" type="submit">Criar acesso do administrador</button>
+          <p id="admin-setup-feedback" class="feedback-message" aria-live="polite"></p>
+        </form>
+
+        <form id="admin-login-form" class="form-grid" hidden>
+          <label class="field">
+            <span>Nome do administrador</span>
+            <input id="admin-username" name="adminUsername" type="text" placeholder="Digite o nome cadastrado" autocomplete="username" required>
+          </label>
+
+          <label class="field">
+            <span>Senha</span>
+            <input id="admin-password" name="adminPassword" type="password" placeholder="Digite a senha cadastrada" autocomplete="current-password" required>
+          </label>
+
+          <button class="secondary-button" type="submit">Entrar como administrador</button>
+          <p id="admin-login-feedback" class="feedback-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
